@@ -1,13 +1,14 @@
 import React from 'react'
 
-const BeerCard = ({beer}) => {
-    console.log(beer)
+const BeerCard = ({beer, togglePopup}) => {
     return (
-        <>
-            <img src={beer.image_url} width="100px" height="auto" />
-            <div>{beer.name}</div>
-            <div>{beer.tagline}</div>
-        </>
+        <div className="card" onClick={(e) => togglePopup(e, beer)}>
+            <div className="card__img">
+                <img src={beer.image_url} />
+            </div>
+            <div className="card__title">{beer.name}</div>
+            <div className="card__tagline">{beer.tagline}</div>
+        </div>
     )
 }
 
